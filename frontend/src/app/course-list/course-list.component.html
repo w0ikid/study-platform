@@ -1,0 +1,38 @@
+<!-- HTML компонента -->
+<div class="course-list-container">
+    <h2>Курсы</h2>
+  
+    <div class="course-grid">
+      <mat-card *ngFor="let course of courses" class="course-card">
+        <div class="course-image">
+          <img [src]="course.image_url && course.image_url.trim() ? course.image_url : 'https://via.placeholder.com/300x200.png?text=Course+Image'" [alt]="course.name">
+          <div class="course-badge" [ngClass]="{'active': course.status === 'active', 'inactive': course.status !== 'active'}">
+            {{ course.status === 'active' ? 'Активен' : 'Неактивен' }}
+          </div>
+        </div>
+        <mat-card-header>
+          <mat-card-title>{{ course.name }}</mat-card-title>
+          <mat-card-subtitle>
+            <div class="course-meta">
+              <!-- <span class="course-date">
+                <mat-icon>calendar_today</mat-icon> Создан: {{ course.created_at | date:'dd.MM.yyyy' }}
+              </span> -->
+            </div>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ course.description }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="enroll(course.id)">
+            Записаться
+          </button>
+          <button mat-raised-button color="accent" (click)="viewDetails(course.id)">
+            Подробнее
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  
+    <p *ngIf="!courses.length" class="no-courses-message">Курсы не найдены.</p>
+  </div>

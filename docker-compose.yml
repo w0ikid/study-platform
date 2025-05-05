@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    container_name: eduapp-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    env_file:
+      - ./backend/configs/.env
+    restart: unless-stopped
+
+  db:
+    image: postgres:15
+    container_name: eduapp-postgres
+    environment:
+      POSTGRES_DB: studybase
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: zhaneka
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  db_data:

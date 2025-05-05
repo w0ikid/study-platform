@@ -1,0 +1,18 @@
+<div *ngIf="course" class="course-detail">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ course.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="course.image_url" alt="{{ course.name }}" />
+      <mat-card-content>
+        <p>{{ course.description }}</p>
+        <p>Статус: {{ course.status }}</p>
+        <p>Создан: {{ course.created_at | date }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="enroll()">
+          Записаться
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

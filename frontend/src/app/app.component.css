@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 960px;
+    margin: auto;
+  }
+  
+  .main-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  
+  footer.footer {
+    background: #fff;
+    padding: 1rem 2rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  
+  .social-links a {
+    color: #333;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+  .social-links a:hover {
+    color: #0077b5; /* LinkedIn blue as a hover accent */
+  }
+  
