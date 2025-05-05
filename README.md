@@ -1,6 +1,64 @@
 # Study Platform API Documentation
 
-This document provides comprehensive information about the Study Platform API endpoints.
+## Overview
+
+Study Platform is an online educational system designed for course management, student enrollment, and certification. The platform enables users to:
+
+- Register and authenticate to access educational content
+- Browse available courses and enroll in them
+- Access course lessons and track learning progress
+- Complete courses and receive PDF certificates
+- For administrators and teachers: create and manage courses and lesson content
+
+The system provides a complete learning journey from registration to certification, with role-based access control for students, teachers, and administrators.
+
+## System Workflow
+
+### User Journey
+1. **Registration and Authentication**
+   - New users register with their personal information
+   - Returning users login with credentials to receive a JWT token
+   - Token is used for all subsequent authenticated requests
+
+2. **Course Discovery**
+   - Users can browse the catalog of available courses
+   - Course details include description, instructor information, and curriculum
+
+3. **Enrollment**
+   - Users enroll in courses of interest
+   - Enrollment creates a record linking the user to the course
+
+4. **Learning Process**
+   - Enrolled users can access course lessons
+   - As users complete lessons, their progress is tracked
+   - The system records which lessons have been completed
+
+5. **Certificate Generation**
+   - Upon completing all required lessons in a course
+   - Users can request a PDF certificate of completion
+   - Certificates include user information, course details, and completion date
+
+### Role-Based Access
+
+The platform supports three user roles with different permissions:
+
+1. **Student**
+   - Can browse courses and enroll
+   - Can access lessons for enrolled courses
+   - Can track their own progress
+   - Can obtain certificates for completed courses
+
+2. **Teacher**
+   - All student permissions
+   - Can create and manage their own courses
+   - Can add, edit, and remove lessons
+   - Can upload course and lesson images
+
+3. **Administrator**
+   - All teacher permissions
+   - Can manage all courses and users
+   - Can delete enrollments
+   - Has access to platform management functions
 
 ## Getting Started
 
